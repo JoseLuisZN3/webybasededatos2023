@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina la Palabra</title>
+    <script src="code.jquery.com_jquery-3.7.1.js"></script>
+    <script src="puroscript.js"></script>
+</head>
+<body>
+    <link rel="stylesheet" href="stylesheet.css">
+    <h1>Adivina la Palabra</h1>
+    <p>Pista: Todas las palabras están relacionadas con la programación.</p>
+    <div id="start-container">
+        <button id="start-button" onclick="startGame()">Iniciar Juego</button>
+    </div>
+    <div id="word-container">
+        <div id="attempts">Intentos restantes: <span id="remaining-attempts">6</span></div>
+        <div id="word"></div>
+        <div id="letters"></div>
+        <div id="message"></div>
+        <button id="restart-button" onclick="restartGame()">Reiniciar Juego</button>
+    </div>
+    <p id="creditos">Elaborado por <strong>Jose Esteban Villalva Felix</strong> y <strong>Jose Luis Zamora Nava</strong></p>
+
+</body>
+</html>
