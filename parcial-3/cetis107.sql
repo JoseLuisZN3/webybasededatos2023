@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 28, 2023 at 04:08 AM
--- Server version: 10.1.39-MariaDB
--- PHP Version: 7.3.5
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 08-11-2023 a las 03:11:16
+-- Versión del servidor: 10.1.39-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,17 +19,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cetis107`
+-- Base de datos: `cetis107`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alumnos`
+-- Estructura de tabla para la tabla `alumnos`
 --
 
 CREATE TABLE `alumnos` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `numero_control` varchar(30) NOT NULL,
   `semestre` int(11) NOT NULL,
@@ -39,36 +39,69 @@ CREATE TABLE `alumnos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `alumnos`
+-- Volcado de datos para la tabla `alumnos`
 --
 
 INSERT INTO `alumnos` (`id`, `nombre`, `numero_control`, `semestre`, `edad`, `turno`, `sexo`) VALUES
-(1, 'Chávez Espinoza Adrián', '21325061070471', 5, 17, 'Vespertino', 1),
-(2, 'Inzunza Becerra Eitan Misael', '21325061070585', 5, 17, 'Vespertino', 1),
-(3, 'López Sainz Sergio Octavio', '21325061070217', 5, 17, 'Vespertino', 1),
-(4, 'Pérez Rojas Ángel Eduardo', '21325061070376', 5, 17, 'Vespertino', 1),
-(5, 'Serrano González Itzel Amairany', '21325061070146', 5, 17, 'Vespertino', 0),
-(6, 'Martinéz Blancas Ximena Noemí', '21325061070594', 5, 17, 'Vespertino', 0);
+(1, 'Luis Carlos', '111111', 5, 18, 'MATUTINO', 1),
+(2, 'Juan', '98798789', 4, 19, 'Matutino', 1),
+(3, 'Maria', '576576576', 2, 15, 'Vespertino', 0),
+(4, 'Prueba', '234234234', 4, 20, 'MATUTINO', 1);
+
+-- --------------------------------------------------------
 
 --
--- Indexes for dumped tables
+-- Estructura de tabla para la tabla `materias`
+--
+
+CREATE TABLE `materias` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `semestre` int(11) NOT NULL,
+  `especialidad` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `materias`
+--
+
+INSERT INTO `materias` (`id`, `nombre`, `semestre`, `especialidad`) VALUES
+(1, 'FISICA', 5, 'PROGRAMACION'),
+(2, 'CALCULO', 5, 'PROGRAMACION'),
+(3, 'INGLES', 5, 'PROGRAMACION'),
+(4, 'CTSYV', 5, 'PROGRAMACION');
+
+--
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `alumnos`
+-- Indices de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indices de la tabla `materias`
+--
+ALTER TABLE `materias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `alumnos`
+-- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `materias`
+--
+ALTER TABLE `materias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
